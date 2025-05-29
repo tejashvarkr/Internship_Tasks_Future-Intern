@@ -1,0 +1,172 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* App.css with colors */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #6b73ff 0%, #000dff 100%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+.app-container {
+  background: #1f2937; /* dark slate */
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  width: 380px;
+}
+
+h1 {
+  font-weight: 700;
+  color: #f3f4f6; /* light gray */
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-shadow: 1px 1px 2px #00000080;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: box-shadow 0.3s ease;
+  background: #374151; /* slate gray */
+  color: #e0e7ff;
+  box-shadow: inset 2px 2px 5px #2a2f3c, inset -2px -2px 5px #455170;
+}
+
+input::placeholder, select::placeholder {
+  color: #a5b4fc;
+}
+
+input:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 8px 3px #6366f1;
+  background: #4f46e5; /* indigo */
+  color: #e0e7ff;
+}
+
+button {
+  width: 100%;
+  padding: 14px 0;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+button.login-btn {
+  background: linear-gradient(45deg, #3b82f6, #2563eb);
+}
+
+button.login-btn:hover {
+  background: linear-gradient(45deg, #2563eb, #1d4ed8);
+  box-shadow: 0 6px 20px #3b82f6;
+}
+
+button.register-btn {
+  background: linear-gradient(45deg, #10b981, #059669);
+}
+
+button.register-btn:hover {
+  background: linear-gradient(45deg, #059669, #047857);
+  box-shadow: 0 6px 20px #10b981;
+}
+
+button.admin-btn {
+  background: linear-gradient(45deg, #ef4444, #b91c1c);
+}
+
+button.admin-btn:hover {
+  background: linear-gradient(45deg, #b91c1c, #7f1d1d);
+  box-shadow: 0 6px 20px #ef4444;
+}
+
+button.logout-btn {
+  background: linear-gradient(45deg, #6b7280, #4b5563);
+}
+
+button.logout-btn:hover {
+  background: linear-gradient(45deg, #4b5563, #374151);
+  box-shadow: 0 6px 20px #6b7280;
+}
+
+.toggle-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.toggle-buttons button {
+  width: 48%;
+  background: #3b82f6;
+  color: white;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 10px 0;
+  box-shadow: 0 3px 10px rgba(59, 130, 246, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.toggle-buttons button:hover {
+  background: #2563eb;
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.6);
+}
+
+.message {
+  text-align: center;
+  font-size: 1rem;
+  color: #a5b4fc;
+  margin-top: 1rem;
+  min-height: 1.2rem;
+  text-shadow: 0 0 5px #a5b4fc88;
+}
