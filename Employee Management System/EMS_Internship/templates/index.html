@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Management</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div id="login-section">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <p id="login-error" style="color:red;"></p>
+  </div>
+
+  <div id="app-section" style="display:none;">
+    <h2>Employee Manager</h2>
+    <form id="employee-form">
+      <input type="text" name="name" placeholder="Name" />
+      <input type="email" name="email" placeholder="Email" />
+      <input type="text" name="role" placeholder="Role" />
+      <button type="submit">Add Employee</button>
+    </form>
+    <ul id="employee-list"></ul>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
