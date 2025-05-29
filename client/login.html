@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <h2>Login / Register</h2>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button id="loginBtn">Login</button>
+        <button id="registerBtn">Register</button>
+        <p id="authError" class="error-message"></p>
+    </div>
+    <script>
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const loginBtn = document.getElementById('loginBtn');
+        const registerBtn = document.getElementById('registerBtn');
+        const authError = document.getElementById('authError');
+        const API_BASE_URL = 'http://localhost:3000/api/auth'; // Ensure this matches your server port
+
+        async function handleAuth(endpoint) {
+            authError.textContent = '';
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value.trim();
+            if (!username || !password) {
+                authError.textContent = 'Username and password are required.';
+                return;
+            }
+            try {
+                const response = await fetch(`${API_BASE_URL}/${endpoint}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.msg || 'Authentication failed');
+                localStorage.setItem('chatToken', data.token);
+                localStorage.setItem('chatUserId', data.userId);
+                localStorage.setItem('chatUsername', data.username);
+                window.location.href = 'index.html';
+            } catch (err) {
+                authError.textContent = err.message;
+            }
+        }
+        loginBtn.addEventListener('click', () => handleAuth('login'));
+        registerBtn.addEventListener('click', () => handleAuth('register'));
+    </script>
+</body>
+</html>
